@@ -1,0 +1,93 @@
+.empty-quiz-info{
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.scroll-row{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-row {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+}
+
+.little-gap{
+  gap: 1rem;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.little-gap::-webkit-scrollbar {
+  display: none;   // <- ez csak a görgetősáv PSZEUDO-ELEMÉT tünteti el
+}
+
+.btn-scroll{
+  border: 0.5px solid var(--color-background-accent);
+  color: var(--color-text-primary);
+}
+li{
+  background-color: var(--color-background-primary);
+  border: 1px solid var(--color-border-tertiary);
+  border-radius: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 15px;
+  min-width: 185px;
+  flex-shrink: 0;
+}
+
+.btn-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.btn-quiz{
+  border: 0.5px solid var(--color-border-tertiary);
+  margin: 1px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.player{
+  background-color: var(--color-background-accent);
+}
+
+.icon-player{
+  background-color: var(--color-background-accent);
+  color: var(--color-white);
+  line-height: 1.5px;
+}
+
+.edit, .delete{
+  background-color: var(--color-background-tertiary);
+}
+
+.icon-edit, .icon-delete{
+  background-color: var(--color-background-tertiary);
+  color: var(--color-text-primary);
+  line-height: 1.5px;
+}
+
+
+
+
+

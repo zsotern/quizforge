@@ -1,0 +1,18 @@
+<label class="answer-btn"
+       [class.correct-ans]="hasAnswered && isCorrect"
+       [class.wrong-ans]="hasAnswered && isSelected && !isCorrect">
+  <input type="radio"
+         name="chosenAnswer"
+         [checked]="isSelected"
+         [disabled]="isLocked"
+         (change)="onSelect()"/>
+  <span class="ans-key">{{ label }}</span>
+  <span class="ans-label">{{ text }}</span>
+  @if (hasAnswered){
+    @if(isCorrect){
+      <span class="check-icon">✓</span>
+    } @else if (isSelected){
+      <span class="wrong-icon">x</span>
+    }
+  }
+</label>

@@ -1,0 +1,80 @@
+.question-container{
+  background-color: var(--color-background-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.question-form{
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.text-input{
+  border-radius: var(--border-radius-md);
+  border:0.5px solid var(--color-border-primary);
+  font-size: 16px;
+  padding: 15px;
+  width: 100%;
+}
+
+.answer{
+  border: none;
+}
+
+.answers-container{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.answer-container{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  border: 0.5px solid var(--color-border-primary);
+  border-radius: 10px;
+}
+
+.radio-label{
+  border-radius: 50%;
+  border:0.5px solid var(--color-border-primary);
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.ans-key.selected{
+  border: 2px solid var(--color-background-accent);
+  background-color: var(--color-background-tertiary);
+}
+
+
+input[type="radio"]{
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+}
+
+label{
+  color: var(--color-text-secondary);
+}
+
+.margin-top{
+  margin-top: 10px;
+}
+
+.label-info{
+  margin: 10px 0 5px 0;
+  color: var(--color-text-primary);
+}
+
+.label-info-answer{
+  color: var(--color-text-primary);
+  margin-top: 10px;
+}
