@@ -1,0 +1,58 @@
+.little-gap{
+  gap: 1rem;
+}
+
+.link-back{
+  color: var(--color-text-secondary);
+  cursor:pointer;
+}
+
+.progress-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.progress-bar{
+  background-color: var(--color-background-tertiary);
+  width: 90%;
+  height: 5px;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+.progress-bar-progress{
+  background-color: var(--color-background-accent);
+  height: 5px;
+  border-radius: 15px;
+}
+
+.progress-value{
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.quizInfo{
+  display:flex;
+  align-items: center;
+}
+
+.placeholder{
+  border-radius: 999px;
+  background-color:var(--color-background-tertiary);
+  color: var(--color-background-accent);
+  justify-content: center;
+  text-align:center;
+  padding: 4px 12px;
+}
+
+.quizTitle{
+  font-size: 18px;
+  padding: 4px 12px;
+}
+
+.questionTitle{
+  font-size: 22px;
+}
+

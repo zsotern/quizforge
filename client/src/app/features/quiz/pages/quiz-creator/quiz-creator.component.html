@@ -1,0 +1,30 @@
+<div class="creator-layout" [class.selected-quiz]="selectedQuiz">
+  @if(selectedQuiz){
+    <div class="sidebar card">
+      <span class="text-input">{{quizTitleLabel}}</span>
+      <ul>
+        @for (q of questions; track q.id){
+          <li (click)="selectQuestion(q)">
+            {{ q.text }}
+            <button class="btn-quiz delete" type="button" (click)="deleteQuestion(q.id); $event.stopPropagation()" aria-label="Kvíz törlése">
+              <i class="ti ti-trash icon-delete" aria-hidden="true"></i>
+            </button>
+          </li>
+        }
+      </ul>
+    </div>
+  }
+
+  <div class="editor-panel card" [class.selected-quiz-true]="selectedQuiz">
+    <div class="quiz-info-container">
+      <input type="text" class="text-input" [formControl]="quizTitle" placeholder="Kvíz címe" />
+      <button type="button" class="btn margin-left" (click)="saveQuiz()">Kvíz címének módosítása</button>
+    </div>
+    <div class="quiz-info-checkbox">
+      <input type="checkbox" [checked]="isSelected()">
+      <label>Vissza lehet lépni a kitöltésnél a kérdésekben.</label>
+    </div>
+    <app-question-editor [questionToEdit]="selectedQuestion" (questionSaved)="questionSaved($event)"></app-question-editor>
+  </div>
+
+</div>

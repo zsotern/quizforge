@@ -1,0 +1,28 @@
+<div class="question-container">
+  <form class="question-form" [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+    <label class="label-info">Kérdés:</label>
+    <input type="text" class="text-input" formControlName="text" placeholder="Ki volt Kolombusz?"/>
+
+
+    <div class="answers-container" formArrayName="answers">
+      <span class="label-info-answer">Válaszok:</span>
+      @for (answer of questionForm.controls.answers.controls; track $index){
+        <div class="answer-container">
+          <label class="radio-label">
+            <span class="ans-key" [class.selected]="questionForm.controls.correctAnswerIndex.value === $index">{{ getKey($index) }}</span>
+            <input  type="radio"
+                    name="correctAnswer"
+                    [value]="$index"
+                    [checked]="questionForm.controls.correctAnswerIndex.value === $index"
+                    (change)="questionForm.controls.correctAnswerIndex.setValue($index)"
+            />
+          </label>
+          <input type="text" class="text-input answer" [formControlName]="$index"/>
+        </div>
+      }
+    </div>
+    <label class="label-info">Magyarázat: </label>
+    <input type="text" class="text-input" formControlName="explanation" placeholder="Felfedezte Amerikát."/>
+    <button type="submit" class="btn margin-top">Kérdés mentése</button>
+  </form>
+</div>

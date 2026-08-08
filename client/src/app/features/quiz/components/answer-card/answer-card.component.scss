@@ -1,0 +1,69 @@
+.answer-btn{
+  background:var(--color-background-primary);
+  border:0.5px solid var(--color-border-primary);
+  border-radius:var(--border-radius-lg);
+  padding: 10px;
+  text-align:left;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+input[type="radio"]{
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.check-icon{
+  width:28px;
+  height:28px;
+  border-radius: 50%;
+  background:var(--color-success);
+  color: var(--color-background-primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:500;
+  margin-left:auto;
+}
+
+.wrong-icon{
+  width:28px;
+  height:28px;
+  border-radius: 50%;
+  background:var(--color-error);
+  color: var(--color-background-primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:500;
+  margin-left:auto;
+}
+
+.answer-btn.correct-ans{
+  border:0.5px solid var(--color-success);
+  color:var(--color-success);
+  background-color: var(--color-success-bg);
+}
+
+.answer-btn.correct-ans .ans-label{
+  background-color: var(--color-success-bg);
+}
+
+.answer-btn.correct-ans .ans-key{
+  color:var(--color-success);
+  background-color: var(--color-background-primary);
+}
+
+.answer-btn.wrong-ans{
+  border:0.5px solid var(--color-error);
+  color:var(--color-error);
+}
+
+.answer-btn.wrong-ans .ans-key{
+  color:var(--color-error);
+}

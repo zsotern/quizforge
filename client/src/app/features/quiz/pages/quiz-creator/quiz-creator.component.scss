@@ -1,0 +1,36 @@
+.creator-layout.selected-quiz{
+  display:grid;
+  grid-template-columns: 350px 1fr;
+  gap: 10px;
+  margin: 0 150px;
+}
+
+.editor-panel.card.selected-quiz-true{
+  max-width: 700px !important;
+  margin: 10px 30px;
+}
+
+.quiz-info-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.margin-left{
+  margin-left: 10px;
+}
+
+.quiz-info-checkbox{
+  display: flex;
+  flex-direction: row;
+}
+
+ul{
+  list-style: none;
+}
+
+li{
+  cursor: pointer;
+}
+

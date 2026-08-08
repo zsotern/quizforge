@@ -1,0 +1,28 @@
+.nav-bg{
+  background: var(--color-background-tertiary);
+}
+
+.nav{
+  display: flex;
+  justify-self: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 12px 20px;
+  height: 55px;
+}
+
+a{
+  text-decoration: none;
+  padding: 5px 10px;
+  color: var(--color-text-primary);
+}
+
+a:hover{
+  background-color: var(--color-background-accent);
+  color: var(--color-white);
+  border-radius: 15px;
+}
