@@ -1,10 +1,20 @@
+<div class="card container">
+  <span class="link-back ans-key" routerLink="">←</span>
+
+  <div class="no-gap">
+    <h1>Result</h1>
+    <p>Here's how you did!</p>
+  </div>
+</div>
+
 <div class="card">
   @if(quiz && quizAttempt){
     <div class="score-container">
-      <div class="score bg-tertiary">
-        <span class="bg-tertiary">{{getScore()}}%</span>
-        <span class="small bg-tertiary">{{getCorrectAnswerCount()}}/{{total}}</span>
+      <div class="score">
+        <span class="">{{getScore()}}%</span>
+        <span class="small">{{getCorrectAnswerCount()}}/{{total}}</span>
       </div>
+
       <div class="info">
         <span>{{quizTitle}}</span>
         <span class="small pd-small">Befejezve {{ getTime() }} perc alatt</span>
@@ -13,30 +23,37 @@
           <span class="small bg-red pd-small">{{getWrongAnswerCount()}} hibás</span>
         </div>
       </div>
+
     </div>
     <div class="results-container">
       @for(qr of sortedRes; track qr.questionId){
+
         <div class="result"  [class.wrong]="!qr.isCorrect" [class.correct]="qr.isCorrect">
         @if(!qr.isCorrect){
+
           <div class="answers">
             <span>{{getResultSummary(qr).questionText}}</span>
             <span class="small">Válaszod: {{getResultSummary(qr).chosenAnswerText}}</span>
+
             <div class="correct-answer">
               <span class="small">Helyes válasz: {{getResultSummary(qr).correctAnswerText}}</span>
               @if(getResultSummary(qr).explanation){
                 <span class="small">Indoklás: {{getResultSummary(qr).explanation}}</span>
               }
             </div>
+
           </div>
         }@else{
           <div>
             <span>{{getResultSummary(qr).questionText}}</span>
+
             <div class="anwers">
               <span class="small">Helyes válasz: {{getResultSummary(qr).correctAnswerText}}</span>
               @if(getResultSummary(qr).explanation){
                 <span class="small">Indoklás: {{getResultSummary(qr).explanation}}</span>
               }
             </div>
+
           </div>
         }
         </div>

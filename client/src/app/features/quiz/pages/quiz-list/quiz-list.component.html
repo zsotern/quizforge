@@ -1,28 +1,52 @@
-<div class="card">
-  <h1>Kvízeim</h1>
+<div class="card container">
+<h1>My Quizzes</h1>
+</div>
+  <div class="card extra-padding">
   @if (quizzes.length === 0) {
     <p class="empty-quiz-info">Még nincs egy kvízed sem. Hozz létre egyet!</p>
   } @else{
+
     <div class="scroll-row">
-      <button type="button" class="btn-scroll" (click)="scrollLeft()"> < </button>
+
       <ul class="little-gap" #scrollList>
 
         @for(quiz of quizzes; track quiz.id){
-          <li>
-            {{ quiz.title }} - {{quiz.questions.length}}
-            <div class="btn-container">
-              <button class="btn-quiz edit" routerLink="/quiz/{{quiz.id}}/edit" aria-label="Kvíz szerkesztése"><i class="ti ti-edit icon-edit" aria-hidden="true"></i></button>
-              <button class="btn-quiz delete" type="button" (click)="deleteQuiz(quiz.id)" aria-label="Kvíz törlése"><i class="ti ti-trash icon-delete" aria-hidden="true"></i></button>
-              <button class="btn-quiz player" routerLink="/quiz/{{quiz.id}}/player" aria-label="Kvíz lejátszása"><i class="ti ti-player-play icon-player" aria-hidden="true"></i></button>
+          <li class="quiz-card">
+            <div class="quiz-icon-circle">
+              <img
+                src="/blocks/block_2x2_blue.png"
+                alt=""
+              >
             </div>
+
+            <h3>{{ quiz.title }}</h3>
+
+            <p class="question-count">
+              {{ quiz.questions.length }} kérdés
+            </p>
+
+            <div class="btn-container">
+              <button class="btn-quiz edit" routerLink="/quiz/{{quiz.id}}/edit" aria-label="Kvíz szerkesztése">
+                <i class="ti ti-edit icon-edit" aria-hidden="true"></i>
+              </button>
+
+              <button class="btn-quiz delete" type="button" (click)="deleteQuiz(quiz.id)" aria-label="Kvíz törlése">
+                <i class="ti ti-trash icon-delete" aria-hidden="true"></i>
+              </button>
+
+              <button class="btn-quiz player" routerLink="/quiz/{{quiz.id}}/player" aria-label="Kvíz lejátszása">
+                <i class="ti ti-player-play icon-player" aria-hidden="true"></i>
+              </button>
+            </div>
+
           </li>
         }
 
       </ul>
-      <button type="button" class="btn-scroll" (click)="scrollRight()"> > </button>
     </div>
 
-
   }
-  <button class="btn" routerLink="/quiz/new">Új kvíz létrehozása</button>
+  <button class="btn extra-margin" routerLink="/quiz/new">
+    Új kvíz létrehozása
+  </button>
 </div>

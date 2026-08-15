@@ -1,53 +1,69 @@
-<div class="card little-gap">
-  @if(quiz){
-    <span class="link-back" routerLink="">← Kilépés</span>
+@if (quiz) {
+  <div class="card container">
+    <span class="link-back ans-key" routerLink="">←</span>
+
+    <div class="no-gap">
+      <h1>Player</h1>
+      <p>Answer questions and build your creation!</p>
+    </div>
+  </div>
+
+
+  <div class="card little-gap">
 
     <div class="progress-container">
       <div class="progress-bar">
         <div class="progress-bar-progress" [style.width.%]="(questionIndex + 1) / quiz.questions.length * 100"></div>
       </div>
-      <div class="progress-value">{{questionIndex+1}}/{{quiz.questions.length}}</div>
+      <div class="progress-value">{{ questionIndex + 1 }}/{{ quiz.questions.length }}</div>
     </div>
 
     <div class="quizInfo">
       <div class="placeholder">Quiz</div>
-      <div class="quizTitle"> {{quizTitle}} </div>
+      <div class="quizTitle"> {{ quizTitle }}</div>
     </div>
 
-    <div class="questionTitle">{{actualQuestion?.text}}</div>
-    @for(a of actualQuestion?.answers; track a.id){
-      <app-answer-card
-        [text]="a.text"
-        [index]="$index"
-        [isSelected]="chosenAnswerIdx === $index"
-        [isCorrect]="isAnswerCorrect(a)"
-        [hasAnswered]="hasAnswered()"
-        [isLocked]="hasAnswered() && !quiz.allowBacktrack"
-        (answerSelected)="chosenAnswerIdx = $event"
-      />
-    }
-
-    @if (hasAnswered()) {
-      @if (isSelectedAnswerCorrect()) {
-        <p>✅ Helyes!</p>
-      } @else {
-        <p>❌ Helytelen</p>
+    <div class="card-ish little-gap">
+      <div class="questionTitle">{{ actualQuestion?.text }}</div>
+      @for (a of actualQuestion?.answers; track a.id) {
+        <app-answer-card
+          [text]="a.text"
+          [index]="$index"
+          [isSelected]="chosenAnswerIdx === $index"
+          [isCorrect]="isAnswerCorrect(a)"
+          [hasAnswered]="hasAnswered()"
+          [isLocked]="hasAnswered() && !quiz.allowBacktrack"
+          (answerSelected)="chosenAnswerIdx = $event"
+        />
       }
-      @if(actualQuestion?.explanation != undefined){
-        <div class="explanation-box">{{actualQuestion?.explanation}}</div>
+
+      @if (hasAnswered()) {
+        @if (isSelectedAnswerCorrect()) {
+          <p>✅ Helyes!</p>
+        } @else {
+          <p>❌ Helytelen</p>
+        }
+        @if (actualQuestion?.explanation != undefined) {
+          <div class="explanation-box">{{ actualQuestion?.explanation }}</div>
+        }
       }
-    }
 
-    @if(questionIndex === 0 || !quiz.allowBacktrack){
-      <button type="button" class="btn" (click)="forwardQuestion()" [disabled]="!isAllowBackTrack()">Előző</button>
-    }
+      <div class="button-container">
+        @if (questionIndex === 0 || !quiz.allowBacktrack) {
+          <button type="button" class="btn btn-light" (click)="forwardQuestion()" [disabled]="!isAllowBackTrack()">Előző</button>
+        }
 
-    @if(quiz.questions.length-1 != questionIndex){
-      <button type="button" class="btn" (click)="nextQuestion()" [disabled]="!hasAnswered()">Következő</button>
-    }@else{
-      <button type="button" class="btn" routerLink="/quiz/{{attemptId}}/result" (click)="finishQuiz()" [disabled]="!hasAnswered()">Quiz befejezése</button>
-    }
-  } @else{
-    <p>Nincs ilyen nevű kvíz</p>
-  }
-</div>
+        @if (quiz.questions.length - 1 != questionIndex) {
+          <button type="button" class="btn" (click)="nextQuestion()" [disabled]="!hasAnswered()">Következő</button>
+        } @else {
+          <button type="button" class="btn" routerLink="/quiz/{{attemptId}}/result" (click)="finishQuiz()"
+                  [disabled]="!hasAnswered()">Quiz befejezése
+          </button>
+        }
+      </div>
+
+    </div>
+  </div>
+} @else {
+  <p>Nincs ilyen nevű kvíz</p>
+}

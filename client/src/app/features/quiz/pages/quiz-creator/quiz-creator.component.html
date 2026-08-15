@@ -1,30 +1,66 @@
 <div class="creator-layout" [class.selected-quiz]="selectedQuiz">
+
+  <div class="creator-header">
+    <span class="link-back ans-key" routerLink="">←</span>
+    <div>
+      <h1>Quiz Creator</h1>
+      <p>Create and customize your quiz.</p>
+    </div>
+  </div>
+
   @if(selectedQuiz){
-    <div class="sidebar card">
-      <span class="text-input">{{quizTitleLabel}}</span>
-      <ul>
-        @for (q of questions; track q.id){
-          <li (click)="selectQuestion(q)">
-            {{ q.text }}
-            <button class="btn-quiz delete" type="button" (click)="deleteQuestion(q.id); $event.stopPropagation()" aria-label="Kvíz törlése">
-              <i class="ti ti-trash icon-delete" aria-hidden="true"></i>
-            </button>
-          </li>
-        }
-      </ul>
+    <div class="card question-sidebar">
+      <h2>{{quizTitleLabel}}</h2>
+      <div class="sidebar">
+        <ol>
+          @for (q of questions; track q.id){
+            <li (click)="selectQuestion(q)">
+              {{ q.text }}
+              <button class="btn-quiz delete" type="button" (click)="deleteQuestion(q.id); $event.stopPropagation()" aria-label="Kvíz törlése">
+                <i class="ti ti-trash icon-delete" aria-hidden="true"></i>
+              </button>
+            </li>
+          }
+        </ol>
+      </div>
     </div>
   }
 
+
   <div class="editor-panel card" [class.selected-quiz-true]="selectedQuiz">
+    <label class="label-quiz-title">Quiz title</label>
     <div class="quiz-info-container">
-      <input type="text" class="text-input" [formControl]="quizTitle" placeholder="Kvíz címe" />
-      <button type="button" class="btn margin-left" (click)="saveQuiz()">Kvíz címének módosítása</button>
+
+      <input type="text" class="text-input" [formControl]="quizTitle" placeholder="Enter quiz title" />
+      <button type="button" class="btn margin-left btn-light" (click)="saveQuiz()">Update</button>
     </div>
-    <div class="quiz-info-checkbox">
-      <input type="checkbox" [checked]="isSelected()">
-      <label>Vissza lehet lépni a kitöltésnél a kérdésekben.</label>
+
+    <div class="quiz-settings">
+      <h3>Quiz settings</h3>
+
+      <div class="setting-row">
+        <div class="setting-text">
+          <label for="allow-back">
+            Allow going back to previous questions
+          </label>
+
+          <p>
+            During the quiz, the user can return to previous questions.
+          </p>
+        </div>
+
+        <label class="switch">
+          <input
+            id="allow-back"
+            type="checkbox"
+            [checked]="allowBackTrack"
+            (change)="toggleBackTrack()"
+          >
+          <span class="slider"></span>
+        </label>
+      </div>
     </div>
+
     <app-question-editor [questionToEdit]="selectedQuestion" (questionSaved)="questionSaved($event)"></app-question-editor>
   </div>
-
 </div>

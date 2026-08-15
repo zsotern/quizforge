@@ -1,16 +1,21 @@
 :root{
-  --color-background-primary: #fbfdff;
-  --color-background-secondary: #bcc5c8;
-  --color-background-tertiary:#f5c29f;
-  --color-background-accent:#F97316;
+  --color-white: #fbfdff;
 
-  --color-text-primary:#18181B;
-  --color-text-secondary:#52525B;
-  --color-text-tertiary:#9CA3AF;
+  --color-grey: #d9d9d8;
+  --color-blue: #2a4d88;
+  --color-red: #780000;
+  --color-darker-blue: #11294e;
 
-  --color-border-primary: #bcc5c8;
-  --color-border-secondary:#52525B;
-  --color-border-tertiary:#f5c29f;
+  --color-background-primary: #d9d9d8;
+  --color-background-secondary:#fbfdff;
+
+  --color-text-primary:#fbfdff;
+  --color-text-secondary:#000;
+  --color-text-accent: #11294e;
+
+  --color-border-primary: #fbfdff;
+  --color-border-secondary: #d9d9d8;
+  --color-border-tertiary:#780000;
 
   --border-radius-lg:12px;
   --border-radius-md:8px;
@@ -22,15 +27,13 @@
 
   --color-success:#22C55E;
   --color-success-bg: #e3efe4;
-
-  --color-white: #fbfdff;
 }
 
 *{
-  background-color: var(--color-background-primary);
   font-family: var(--font-sans), serif;
   padding: 0;
   margin: 0;
+  color: var(--color-text-accent)
 }
 
 *, *::before, *::after {
@@ -45,39 +48,54 @@ html{
   width:28px;
   height:28px;
   border-radius: 50%;
-  background:var(--color-background-secondary);
+  background:var(--color-blue);
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:12px;
   font-weight:500;
-  color:var(--color-text-primary);
+  color:var(--color-white);
   flex-shrink:0;
 }
 
 .text-input{
-  border-radius: var(--border-radius-md);
-  border:0.5px solid var(--color-border-primary);
   font-size: 16px;
   padding: 15px;
   width: 100%;
+  border: 1px solid var(--color-grey);
+  border-radius: 10px;
+  background: none;
 }
 
 .btn{
-  background-color: var(--color-background-accent);
-  color: var(--color-background-primary);
+  background-color: var(--color-red);
+  color: var(--color-white);
   border-radius: 10px;
-  border: 0.5px solid var(--color-border-accent);
+  border: 2px solid var(--color-red);
   padding: 5px 15px;
   align-self: flex-end;
   font-size: 16px;
 }
 
+.btn:hover{
+  background-color: #FFC107;
+  border-color: #FFC107;
+  color: var(--color-darker-blue);
+}
+
+.btn-light{
+  background-color: var(--color-white);
+  border: 1px solid var(--color-blue);
+  color: var(--color-blue);
+  padding: 14px 10px;
+
+}
+
 .card{
-  background-color: var(--color-background-primary);
-  border: 1px solid var(--color-border-tertiary);
+  background-color: var(--color-white);
+  border:1px solid var(--color-white);
   border-radius: 15px;
-  max-width: 500px;
+  max-width: 800px;
   margin: 10px auto;
   padding: 20px;
   display: flex;
@@ -89,7 +107,48 @@ button:focus, a:focus, input:focus{
 }
 
 button:focus-visible, a:focus-visible, input:focus-visible{
-  box-shadow: 1px 1px 4px 4px var(--color-background-tertiary) inset;
+  box-shadow: 1px 1px 4px 4px #FFC107 inset;
+}
+
+/*------------------------------*/
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background-color: var(--color-background-primary);
+}
+
+/*
+Kocka	Szín
+Phlox	#CAA9F3 lila
+Verbena	#B37AD4 sötétebb lila
+Periwinkle	#7997E6 kékesebb lila
+Atlantis	#206ABC kék
+Phthalo Blue	#0E155E nagyon sötét kék
+*/
+
+.npt-txt-border {
+  border-radius: var(--border-radius-md);
+  border: solid 0.5px var(--color-blue);
+}
+
+::placeholder{
+  color: var(--color-blue);
+}
+
+h1{
+  color: var(--color-darker-blue);
+}
+
+.link-back{
+  color: var(--color-white);
+  font-weight: bold;
+  cursor:pointer;
 }
 
 
+.button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -1,3 +1,12 @@
+.container{
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
 .score-container{
   display: flex;
   flex-direction: row;
@@ -7,7 +16,7 @@
 }
 
 .score{
-  border: 3px solid var(--color-background-accent);
+  border: 3px solid var(--color-blue);
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -17,9 +26,6 @@
   align-items: center;
 }
 
-.bg-tertiary{
-  background-color: var(--color-background-tertiary);
-}
 
 .small{
   font-size: 12px;

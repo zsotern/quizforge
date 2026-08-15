@@ -31,10 +31,10 @@ export class QuizListComponent implements OnInit {
   }
 
   scrollLeft() {
-    this.scrollList.nativeElement.scrollBy({ left: -200 });
+    this.scrollList.nativeElement.scrollBy({ left: -250 });
   }
 
   scrollRight() {
-    this.scrollList.nativeElement.scrollBy({left: 200});
+    this.scrollList.nativeElement.scrollBy({left: 250});
   }
 }

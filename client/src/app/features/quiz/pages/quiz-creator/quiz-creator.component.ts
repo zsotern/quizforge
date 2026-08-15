@@ -3,14 +3,15 @@ import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {IQuestion, IQuiz} from '../../../../shared/models/quiz.model';
 import {QuizService} from '../../services/quiz-service';
 import {QuestionEditorComponent} from '../../components/question-editor/question-editor.component';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-quiz-creator',
-  imports: [
-    ReactiveFormsModule,
-    QuestionEditorComponent
-  ],
+    imports: [
+        ReactiveFormsModule,
+        QuestionEditorComponent,
+        RouterLink
+    ],
   templateUrl: './quiz-creator.component.html',
   styleUrl: './quiz-creator.component.scss',
   standalone: true
@@ -104,6 +105,10 @@ export class QuizCreatorComponent implements OnInit{
   isSelected() {
     this.allowBackTrack = true;
     return this.allowBackTrack;
+  }
+
+  toggleBackTrack(){
+    this.allowBackTrack = !this.allowBackTrack;
   }
 
   selectQuestion(question: IQuestion) {

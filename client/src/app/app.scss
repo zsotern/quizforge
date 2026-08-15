@@ -1,1 +1,148 @@
+.blocks-background {
+  position: fixed;
+  inset: 0;
 
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.app-content,
+app-navbar {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-block {
+  position: absolute;
+  object-fit: contain;
+  user-select: none;
+  opacity: 0.95;
+  width: 150px;
+  pointer-events: none;
+  animation: floatBlock 7s ease-in-out infinite;
+}
+
+@keyframes floatBlock {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+.block-left-2,
+.block-right-4 {
+  animation-duration: 9s;
+}
+
+.block-left-3,
+.block-right-1 {
+  animation-duration: 11s;
+}
+
+.block-left-5,
+.block-right-3 {
+  animation-duration: 8s;
+}
+
+/* =========================
+   BAL OLDAL
+   ========================= */
+
+.block-left-1 {
+  top: 10%;
+  left: 10%;
+
+  transform: rotate(8deg);
+}
+
+.block-left-3 {
+  top: 30%;
+  left: 7%;
+
+  transform: rotate(14deg);
+}
+
+.block-left-4 {
+  top: 48%;
+  left: 11%;
+
+  transform: rotate(-7deg);
+}
+
+.block-left-5 {
+  top: 65%;
+  left: 7.5%;
+
+  transform: rotate(-16deg);
+}
+
+.block-left-6 {
+  width: 170px;
+  bottom: 2%;
+  left: 8%;
+
+  transform: rotate(0deg);
+}
+
+
+/* =========================
+   JOBB OLDAL
+   ========================= */
+
+.block-right-1 {
+  top: 5%;
+  right: 13%;
+
+  transform: rotate(-8deg);
+}
+
+.block-right-2 {
+  top: 18%;
+  right: 9%;
+
+  transform: rotate(5deg);
+}
+
+.block-right-3 {
+  top: 34%;
+  right: 7%;
+
+  transform: rotate(-14deg);
+}
+
+.block-right-4 {
+  top: 53%;
+  right: 11%;
+
+  transform: rotate(7deg);
+}
+
+.block-right-5 {
+  top: 69%;
+  right: 7.5%;
+
+  transform: rotate(16deg);
+}
+
+.block-right-6 {
+  bottom: 3%;
+  right: 9%;
+
+  transform: rotate(0deg);
+}
+
+@media (max-width: 1064px) {
+  .bg-block {
+    display: none;
+  }
+}

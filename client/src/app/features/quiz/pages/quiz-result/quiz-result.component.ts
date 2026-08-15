@@ -1,12 +1,14 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {QuizAttemptService} from '../../services/quiz-attempt-service';
 import {QuizService} from '../../services/quiz-service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, RouterLink} from '@angular/router';
 import { IQuestionResult, IQuiz, IQuizAttempt} from '../../../../shared/models/quiz.model';
 
 @Component({
   selector: 'app-quiz-result',
-  imports: [],
+    imports: [
+        RouterLink
+    ],
   templateUrl: './quiz-result.component.html',
   styleUrl: './quiz-result.component.scss',
   standalone: true
