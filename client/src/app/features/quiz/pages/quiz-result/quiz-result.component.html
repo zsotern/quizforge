@@ -17,10 +17,10 @@
 
       <div class="info">
         <span>{{quizTitle}}</span>
-        <span class="small pd-small">Befejezve {{ getTime() }} perc alatt</span>
+        <span class="small pd-small">Finished in {{ getTime() }} seconds</span>
         <div class="info-badges">
-          <span class="small bg-green pd-small">{{getCorrectAnswerCount()}} helyes</span>
-          <span class="small bg-red pd-small">{{getWrongAnswerCount()}} hibás</span>
+          <span class="small bg-green pd-small">{{getCorrectAnswerCount()}} correct</span>
+          <span class="small bg-red pd-small">{{getWrongAnswerCount()}} incorrect</span>
         </div>
       </div>
 
@@ -33,12 +33,12 @@
 
           <div class="answers">
             <span>{{getResultSummary(qr).questionText}}</span>
-            <span class="small">Válaszod: {{getResultSummary(qr).chosenAnswerText}}</span>
+            <span class="small">Your answer: {{getResultSummary(qr).chosenAnswerText}}</span>
 
             <div class="correct-answer">
-              <span class="small">Helyes válasz: {{getResultSummary(qr).correctAnswerText}}</span>
+              <span class="small">Correct answer: {{getResultSummary(qr).correctAnswerText}}</span>
               @if(getResultSummary(qr).explanation){
-                <span class="small">Indoklás: {{getResultSummary(qr).explanation}}</span>
+                <span class="small">Explanation: {{getResultSummary(qr).explanation}}</span>
               }
             </div>
 
@@ -48,9 +48,9 @@
             <span>{{getResultSummary(qr).questionText}}</span>
 
             <div class="anwers">
-              <span class="small">Helyes válasz: {{getResultSummary(qr).correctAnswerText}}</span>
+              <span class="small">Correct answer: {{getResultSummary(qr).correctAnswerText}}</span>
               @if(getResultSummary(qr).explanation){
-                <span class="small">Indoklás: {{getResultSummary(qr).explanation}}</span>
+                <span class="small">Explanation: {{getResultSummary(qr).explanation}}</span>
               }
             </div>
 

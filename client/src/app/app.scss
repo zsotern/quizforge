@@ -23,9 +23,20 @@ app-navbar {
   object-fit: contain;
   user-select: none;
   opacity: 0.95;
-  width: 150px;
   pointer-events: none;
   animation: floatBlock 7s ease-in-out infinite;
+}
+
+.block-size-1{
+  width: 250px;
+}
+
+.block-size-2{
+  width: 230px;
+}
+
+.block-size-3{
+  width: 200px;
 }
 
 @keyframes floatBlock {
@@ -54,34 +65,32 @@ app-navbar {
   animation-duration: 8s;
 }
 
-/* =========================
-   BAL OLDAL
-   ========================= */
+/* BAl OLDAL */
 
 .block-left-1 {
-  top: 10%;
-  left: 10%;
+  top: 14%;
+  left: 7%;
 
   transform: rotate(8deg);
 }
 
 .block-left-3 {
   top: 30%;
-  left: 7%;
+  left: 5%;
 
   transform: rotate(14deg);
 }
 
 .block-left-4 {
   top: 48%;
-  left: 11%;
+  left: 9%;
 
   transform: rotate(-7deg);
 }
 
 .block-left-5 {
   top: 65%;
-  left: 7.5%;
+  left: 6.5%;
 
   transform: rotate(-16deg);
 }
@@ -89,61 +98,67 @@ app-navbar {
 .block-left-6 {
   width: 170px;
   bottom: 2%;
-  left: 8%;
+  left: 7%;
 
   transform: rotate(0deg);
 }
 
 
-/* =========================
-   JOBB OLDAL
-   ========================= */
+/* JOBB OLDAL */
 
 .block-right-1 {
-  top: 5%;
-  right: 13%;
+  top: 12%;
+  right: 10%;
 
   transform: rotate(-8deg);
 }
 
 .block-right-2 {
-  top: 18%;
-  right: 9%;
+  top: 22%;
+  right: 6%;
 
   transform: rotate(5deg);
 }
 
 .block-right-3 {
   top: 34%;
-  right: 7%;
+  right: 5%;
 
   transform: rotate(-14deg);
 }
 
 .block-right-4 {
   top: 53%;
-  right: 11%;
+  right: 7%;
 
   transform: rotate(7deg);
 }
 
 .block-right-5 {
-  top: 69%;
-  right: 7.5%;
+  top: 65%;
+  right: 4.5%;
 
   transform: rotate(16deg);
 }
 
 .block-right-6 {
   bottom: 3%;
-  right: 9%;
+  right: 5%;
 
   transform: rotate(0deg);
 }
 
 @media (max-width: 1585px) {
-  .bg-block{
+  .block-size-1{
     width: 100px;
+  }
+
+  .block-size-2{
+    width: 100px;
+  }
+
+  .block-size-3{
+    width: 70px;
   }
 }
 

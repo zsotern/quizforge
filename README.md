@@ -19,7 +19,17 @@ QuizForge is a lightweight web application for quickly creating and sharing quiz
 
 ## Screenshots
 
-*(screenshots of the Creator, Player, Quiz List, and Results views go here)*
+### Quiz List
+![Quiz List](docs/screenshots/quiz_list.png)
+
+### Creator
+![Creator](docs/screenshots/quiz_creator.png)
+
+### Player
+![Player](docs/screenshots/quiz_player.png)
+
+### Results
+![Results](docs/screenshots/quiz_results.png)
 
 ## Tech Stack
 
