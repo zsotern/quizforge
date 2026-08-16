@@ -102,11 +102,6 @@ export class QuizCreatorComponent implements OnInit{
     }
   }
 
-  isSelected() {
-    this.allowBackTrack = true;
-    return this.allowBackTrack;
-  }
-
   toggleBackTrack(){
     this.allowBackTrack = !this.allowBackTrack;
   }

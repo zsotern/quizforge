@@ -141,6 +141,12 @@ app-navbar {
   transform: rotate(0deg);
 }
 
+@media (max-width: 1585px) {
+  .bg-block{
+    width: 100px;
+  }
+}
+
 @media (max-width: 1064px) {
   .bg-block {
     display: none;

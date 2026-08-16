@@ -110,22 +110,12 @@ button:focus-visible, a:focus-visible, input:focus-visible{
   box-shadow: 1px 1px 4px 4px #FFC107 inset;
 }
 
-/*------------------------------*/
 body {
   margin: 0;
   min-height: 100vh;
 
   background-color: var(--color-background-primary);
 }
-
-/*
-Kocka	Szín
-Phlox	#CAA9F3 lila
-Verbena	#B37AD4 sötétebb lila
-Periwinkle	#7997E6 kékesebb lila
-Atlantis	#206ABC kék
-Phthalo Blue	#0E155E nagyon sötét kék
-*/
 
 .npt-txt-border {
   border-radius: var(--border-radius-md);
@@ -156,4 +146,24 @@ h1{
 .btn-margin{
   margin-top: 10px;
   padding: 10px 15px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--color-background-secondary);
+  color: #434242;
+}
+
+.icon {
+  width:28px;
+  height:28px;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:500;
+  margin-left:auto;
+  flex-shrink: 0;
 }

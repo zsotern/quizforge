@@ -1,11 +1,13 @@
 import {Component, EventEmitter, inject, Input, OnChanges, Output} from '@angular/core';
 import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {IAnswer, IQuestion} from '../../../../shared/models/quiz.model';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-question-editor',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
   templateUrl: './question-editor.component.html',
   styleUrl: './question-editor.component.scss',

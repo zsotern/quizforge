@@ -17,31 +17,13 @@ input[type="radio"]{
 }
 
 .check-icon{
-  width:28px;
-  height:28px;
-  border-radius: 50%;
   background:var(--color-success);
   color: var(--color-background-primary);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:12px;
-  font-weight:500;
-  margin-left:auto;
 }
 
 .wrong-icon{
-  width:28px;
-  height:28px;
-  border-radius: 50%;
   background:var(--color-error);
   color: var(--color-background-primary);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:12px;
-  font-weight:500;
-  margin-left:auto;
 }
 
 .answer-btn.correct-ans{
@@ -55,8 +37,8 @@ input[type="radio"]{
 }
 
 .answer-btn.correct-ans .ans-key{
-  color:var(--color-success);
-  background-color: var(--color-background-primary);
+  color:var(--color-darker-blue);
+  background-color: var(--color-success);
 }
 
 .answer-btn.wrong-ans{
@@ -65,5 +47,6 @@ input[type="radio"]{
 }
 
 .answer-btn.wrong-ans .ans-key{
-  color:var(--color-error);
+  color:var(--color-darker-blue);
+  background: var(--color-error);
 }

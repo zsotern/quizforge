@@ -2,11 +2,12 @@ import {Component, ElementRef, inject, OnInit, ViewChild} from '@angular/core';
 import {QuizService} from '../../services/quiz-service';
 import {IQuiz} from '../../../../shared/models/quiz.model';
 import {RouterLink} from '@angular/router';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-quiz-list',
   imports: [
-    RouterLink
+    RouterLink, DatePipe
   ],
   templateUrl: './quiz-list.component.html',
   styleUrl: './quiz-list.component.scss',

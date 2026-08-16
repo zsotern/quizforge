@@ -48,16 +48,16 @@
         }
       }
 
-      <div class="button-container">
+      <div class="button-container" [class.flex-end]="!quiz.allowBacktrack">
         @if (quiz.allowBacktrack) {
-          <button type="button" class="btn btn-light" (click)="previousQuestion()" [disabled]="questionIndex === 0">Előző</button>
+          <button type="button" class="btn btn-light" (click)="previousQuestion()" [disabled]="questionIndex === 0">Previous</button>
         }
 
         @if (quiz.questions.length - 1 != questionIndex) {
-          <button type="button" class="btn btn-margin" (click)="nextQuestion()" [disabled]="!hasAnswered()">Következő</button>
+          <button type="button" class="btn btn-margin" (click)="nextQuestion()" [disabled]="!hasAnswered()">Next question</button>
         } @else {
-          <button type="button" class="btn btn-margin" routerLink="/quiz/{{attemptId}}/result" (click)="finishQuiz()"
-                  [disabled]="!hasAnswered()">Quiz befejezése
+          <button type="button" class="btn btn-margin"  routerLink="/quiz/{{attemptId}}/result" (click)="finishQuiz()"
+                  [disabled]="!hasAnswered()">Finish quiz
           </button>
         }
       </div>

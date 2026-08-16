@@ -28,6 +28,7 @@
   align-items:center;
   border: 0.5px solid var(--color-border-secondary);
   border-radius: 10px;
+  padding: 0 10px;
 }
 
 .radio-label{
@@ -69,3 +70,12 @@ label-color{
   margin: 10px 0 5px 0;
 }
 
+.check-icon{
+  color: var(--color-background-secondary);
+}
+
+.icon.check-icon.selected{
+  background-color: var(--color-background-secondary);
+  color: var(--color-red);
+  border: 0.5px solid var(--color-red);
+}

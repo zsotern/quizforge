@@ -10,4 +10,6 @@ import {RouterLink} from '@angular/router';
   styleUrl: './navbar.component.scss',
   standalone: true
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  isMenuOpen: boolean = false;
+}

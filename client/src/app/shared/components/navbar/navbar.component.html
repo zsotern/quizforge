@@ -12,8 +12,8 @@
           <span class="logo-text">Quiz<span>Forge</span></span>
         </a>
       </div>
-
-      <div class="nav right">
+    <button type="button" class="hamburger" (click)="isMenuOpen=!isMenuOpen"><i class="ti ti-menu-2"></i></button>
+      <div class="nav right" [class.open]="isMenuOpen">
         <a routerLink="quiz/new" class="highlighted-btn">New quiz</a>
         <a routerLink="/">Quiz list</a>
       </div>

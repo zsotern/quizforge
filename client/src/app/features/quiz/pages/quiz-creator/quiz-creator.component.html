@@ -16,7 +16,7 @@
           @for (q of questions; track q.id){
             <li (click)="selectQuestion(q)">
               {{ q.text }}
-              <button class="btn-quiz delete" type="button" (click)="deleteQuestion(q.id); $event.stopPropagation()" aria-label="Kvíz törlése">
+              <button class="btn-quiz delete" type="button" (click)="deleteQuestion(q.id); $event.stopPropagation()" aria-label="Deleting quiz">
                 <i class="ti ti-trash icon-delete" aria-hidden="true"></i>
               </button>
             </li>

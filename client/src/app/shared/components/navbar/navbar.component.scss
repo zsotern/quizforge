@@ -84,3 +84,37 @@ a.highlighted-btn{
   border-radius: 10px;
   border: 1px solid var(--color-red);
 }
+
+.hamburger{
+  display: none;
+}
+
+.hamburger i{
+  font-size: 28px;
+  padding: 5px;
+}
+
+
+@media (max-width: 650px) {
+  .hamburger{
+    display: flex;
+  }
+
+  .nav.right{
+    display: none;
+  }
+
+  .nav.right.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;  // felülírja a "center"-t, hogy a linkek teljes szélességet kapjanak
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-background-primary);
+    padding: 16px;
+    border-radius: 0;
+    margin: 0;
+  }
+}

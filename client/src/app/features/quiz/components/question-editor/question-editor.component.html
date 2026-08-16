@@ -1,7 +1,7 @@
 <div class="question-container">
   <form class="question-form" [formGroup]="questionForm" (ngSubmit)="onSubmit()">
     <label class="label-color label-info">Question:</label>
-    <input type="text" class="text-input" formControlName="text" placeholder="Question"/>
+    <input type="text" class="text-input" formControlName="text" placeholder="Enter your question here"/>
 
 
     <div class="answers-container" formArrayName="answers">
@@ -17,14 +17,15 @@
                     (change)="questionForm.controls.correctAnswerIndex.setValue($index)"
             />
           </label>
-          <input type="text" class="text-input answer" [formControlName]="$index"/>
+          <input type="text" class="text-input answer" [formControlName]="$index" placeholder="Enter answer option.."/>
+          <span class="icon check-icon" [class.selected]="questionForm.controls.correctAnswerIndex.value === $index">✓</span>
         </div>
       }
     </div>
     <label class="label-color label-info">Explanation (optional) </label>
     <input type="text" class="text-input" formControlName="explanation" placeholder="Give an explanation for the correct answer"/>
     <div class="button-container">
-      <button type="button" class="btn btn-light btn-margin">Cancel</button>
+      <button type="button" class="btn btn-light btn-margin" routerLink="">Cancel</button>
       <button type="submit" class="btn btn-margin">Save question</button>
     </div>
   </form>

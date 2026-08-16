@@ -1,52 +1,51 @@
 <div class="card container">
-<h1>My Quizzes</h1>
+  <h1>My Quizzes</h1>
+  <p class="subtitle">Create, manage and play your quizzes.</p>
 </div>
-  <div class="card extra-padding">
+
+<div class="card extra-padding">
   @if (quizzes.length === 0) {
     <p class="empty-quiz-info">Még nincs egy kvízed sem. Hozz létre egyet!</p>
-  } @else{
-
-    <div class="scroll-row">
-
-      <ul class="little-gap" #scrollList>
-
-        @for(quiz of quizzes; track quiz.id){
-          <li class="quiz-card">
-            <div class="quiz-icon-circle">
-              <img
-                src="/blocks/block_2x2_blue.png"
-                alt=""
-              >
-            </div>
-
-            <h3>{{ quiz.title }}</h3>
-
-            <p class="question-count">
-              {{ quiz.questions.length }} kérdés
-            </p>
-
-            <div class="btn-container">
-              <button class="btn-quiz edit" routerLink="/quiz/{{quiz.id}}/edit" aria-label="Kvíz szerkesztése">
-                <i class="ti ti-edit icon-edit" aria-hidden="true"></i>
-              </button>
-
-              <button class="btn-quiz delete" type="button" (click)="deleteQuiz(quiz.id)" aria-label="Kvíz törlése">
-                <i class="ti ti-trash icon-delete" aria-hidden="true"></i>
-              </button>
-
-              <button class="btn-quiz player" routerLink="/quiz/{{quiz.id}}/player" aria-label="Kvíz lejátszása">
-                <i class="ti ti-player-play icon-player" aria-hidden="true"></i>
-              </button>
-            </div>
-
-          </li>
-        }
-
-      </ul>
+  } @else {
+    <div class="table-scroll">
+      <table class="quiz-table">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Questions</th>
+          <th class="hide-mobile">Created</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for (quiz of quizzes; track quiz.id) {
+            <tr>
+              <td class="title-cell">
+                <span class="quiz-icon-circle hide-mobile">
+                  <img src="/blocks/block_2x2_blue.png" alt="" />
+                </span>
+                <span>{{ quiz.title }}</span>
+              </td>
+              <td>{{ quiz.questions.length }} question{{ quiz.questions.length === 1 ? '' : 's' }}</td>
+              <td class="hide-mobile">{{ quiz.createdAt | date:'MMM d, y' }}</td>
+              <td>
+                <div class="btn-container">
+                  <button class="btn-quiz edit" routerLink="/quiz/{{quiz.id}}/edit" aria-label="Kvíz szerkesztése">
+                    <i class="ti ti-edit icon-edit" aria-hidden="true"></i>
+                  </button>
+                  <button class="btn-quiz delete" type="button" (click)="deleteQuiz(quiz.id)" aria-label="Kvíz törlése">
+                    <i class="ti ti-trash icon-delete" aria-hidden="true"></i>
+                  </button>
+                  <button class="btn-quiz player" routerLink="/quiz/{{quiz.id}}/player" aria-label="Kvíz lejátszása">
+                    <i class="ti ti-player-play icon-player" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
     </div>
-
   }
-  <button class="btn extra-margin" routerLink="/quiz/new">
-    Új kvíz létrehozása
-  </button>
+  <button class="btn extra-margin" routerLink="/quiz/new">+ New quiz</button>
 </div>
