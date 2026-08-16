@@ -93,3 +93,60 @@ app.post('/api/quizzes', async (req, res) => {
         }
     }
 });
+
+app.delete('/api/quizzes/:id', async (req, res) => {
+    let client;
+    try{
+        const id = req.params.id;
+        client = await pool.connect();
+        const result = await client.query('DELETE FROM quizzes WHERE id=$1', [id]);
+        if(result.rowCount === 0){
+            res.status(404).json('No quiz found');
+        } else{
+            res.status(200).json('Successfully deleted quiz');
+        }
+
+    }catch(err){
+        console.error(err);
+        res.status(500).json('Error deleting quiz');
+    } finally {
+        if(client){
+            client.release();
+        }
+    }
+});
+
+app.put('/api/quizzes/:id', async (req, res) => {
+    const quiz_id = req.params.id;
+    const {title, allowBackTrack, questions } = req.body;
+    let client;
+    try{
+        client = await pool.connect();
+        await client.query('BEGIN');
+        await client.query('UPDATE quizzes SET title=$1, allow_back_track=$2 WHERE id=$3',  [title, allowBackTrack, quiz_id]);
+        await client.query('DELETE FROM questions WHERE quiz_id=$1', [quiz_id]);
+
+        for(const question of questions){
+            await client.query('INSERT INTO questions (id, text, quiz_id, explanation) ' +
+                'VALUES ($1,$2,$3, $4)', [question.id, question.text, quiz_id, question.explanation]);
+            for(const answer of question.answers){
+                const isCorrect = question.correctAnswerIds.includes(answer.id);
+                await client.query('INSERT INTO answers (id, text, question_id, is_correct) ' +
+                    'VALUES ($1,$2,$3, $4)', [answer.id, answer.text, question.id, isCorrect]);
+            }
+        }
+
+        await client.query('COMMIT');
+        res.status(200).json('Successfully updated quiz');
+    } catch(err){
+        if(client){
+            await client.query('ROLLBACK');
+        }
+        console.error(err);
+        res.status(500).json('Error updating quiz');
+    } finally {
+        if(client){
+            client.release();
+        }
+    }
+})

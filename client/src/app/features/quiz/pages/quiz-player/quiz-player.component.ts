@@ -126,14 +126,14 @@ export class QuizPlayerComponent implements OnInit {
     return this.shuffle.fisherYatesShuffleAlg(arr)
   }
 
-  forwardQuestion() {
+  previousQuestion() {
+    if(this.questionIndex === 0)
+    {
+      return;
+    }
     this.saveCurrentQuestionResult();
     this.questionIndex--;
     this.chosenAnswerIdx = null;
     this.updateCurrentQuestion();
-  }
-
-  isAllowBackTrack() {
-    return this.quiz?.allowBacktrack;
   }
 }

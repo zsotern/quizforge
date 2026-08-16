@@ -49,14 +49,14 @@
       }
 
       <div class="button-container">
-        @if (questionIndex === 0 || !quiz.allowBacktrack) {
-          <button type="button" class="btn btn-light" (click)="forwardQuestion()" [disabled]="!isAllowBackTrack()">Előző</button>
+        @if (quiz.allowBacktrack) {
+          <button type="button" class="btn btn-light" (click)="previousQuestion()" [disabled]="questionIndex === 0">Előző</button>
         }
 
         @if (quiz.questions.length - 1 != questionIndex) {
-          <button type="button" class="btn" (click)="nextQuestion()" [disabled]="!hasAnswered()">Következő</button>
+          <button type="button" class="btn btn-margin" (click)="nextQuestion()" [disabled]="!hasAnswered()">Következő</button>
         } @else {
-          <button type="button" class="btn" routerLink="/quiz/{{attemptId}}/result" (click)="finishQuiz()"
+          <button type="button" class="btn btn-margin" routerLink="/quiz/{{attemptId}}/result" (click)="finishQuiz()"
                   [disabled]="!hasAnswered()">Quiz befejezése
           </button>
         }
