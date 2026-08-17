@@ -1,10 +1,10 @@
-# QuizForge
+# QuizCrafting
 
 > A lightweight, fast quiz creator and player for students and educators — build a quiz in minutes, play it instantly, and see where you need to improve.
 
 ## Description
 
-QuizForge is a lightweight web application for quickly creating and sharing quiz questions. It targets students who want to test their knowledge and educators who need a fast, free alternative to expensive platforms like Kahoot or Quizizz. Unlike existing tools, QuizForge is designed around speed: a new question card can be created in under 30 seconds, with no registration required for basic use. The clean, distraction-free interface makes it equally useful for self-study and classroom settings.
+QuizCrafting is a lightweight web application for quickly creating and sharing quiz questions. It targets students who want to test their knowledge and educators who need a fast, free alternative to expensive platforms like Kahoot or Quizizz. Unlike existing tools, QuizCrafting is designed around speed: a new question card can be created in under 30 seconds, with no registration required for basic use. The clean, distraction-free interface makes it equally useful for self-study and classroom settings.
 
 ## Goals
 
@@ -14,7 +14,7 @@ QuizForge is a lightweight web application for quickly creating and sharing quiz
 
 ## Non-goals
 
-- QuizForge will not support real-time multiplayer or live classroom sessions in this version. Features like participant lobbies, live leaderboards, or teacher-controlled game flow (à la Kahoot) are out of scope.
+- QuizCrafting will not support real-time multiplayer or live classroom sessions in this version. Features like participant lobbies, live leaderboards, or teacher-controlled game flow (à la Kahoot) are out of scope.
 - No user accounts or authentication are required for the core create → play → review loop. This is a deliberate scope decision, not an oversight — see R7 below.
 
 ## Screenshots
@@ -41,8 +41,8 @@ QuizForge is a lightweight web application for quickly creating and sharing quiz
 ## Setup
 
 ```bash
-git clone https://github.com/zsotern/quizforge
-cd quizforge/client
+git clone https://github.com/zsotern/quizcrafting
+cd quizcrafting/client
 npm install
 ng serve
 ```
