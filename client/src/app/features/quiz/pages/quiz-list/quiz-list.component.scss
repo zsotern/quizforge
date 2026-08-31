@@ -18,6 +18,14 @@ h1 {
 .extra-padding {
   padding: 0 22px;
 }
+
+.card.extra-padding.empty{
+  background-color: var(--color-white);
+  border:1px solid var(--color-white);
+  border-radius: 15px;
+  max-width: 750px;
+  padding: 22px;
+}
 .extra-margin {
   margin: 15px;
 }

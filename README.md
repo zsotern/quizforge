@@ -2,6 +2,7 @@
 
 > A lightweight, fast quiz creator and player for students and educators — build a quiz in minutes, play it instantly, and see where you need to improve.
 
+**Live demo:**  https://quizcrafting-zsotern.vercel.app/
 ## Description
 
 QuizCrafting is a lightweight web application for quickly creating and sharing quiz questions. It targets students who want to test their knowledge and educators who need a fast, free alternative to expensive platforms like Kahoot or Quizizz. Unlike existing tools, QuizCrafting is designed around speed: a new question card can be created in under 30 seconds, with no registration required for basic use. The clean, distraction-free interface makes it equally useful for self-study and classroom settings.

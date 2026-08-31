@@ -3,7 +3,7 @@
   <p class="subtitle">Create, manage and play your quizzes.</p>
 </div>
 
-<div class="card extra-padding">
+<div class="card extra-padding" [class.empty]="quizzes.length === 0">
   @if (quizzes.length === 0) {
     <p class="empty-quiz-info">You do not have any quizzes yet. Create one!</p>
   } @else {
